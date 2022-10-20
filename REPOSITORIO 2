@@ -1,0 +1,60 @@
+import  csv
+
+
+Registros =  namedtuple ( 'Registro del cliente' , 'Registro de Reservacion de sala' , 'editar el nombre del evento' , 'consultar las resarvaciones exiatentes' , 'consultar las resarvaciones exiatentes' , 'registra un nuevo cliente' , 'salir' )
+
+Registros = {}
+archivo = {}
+
+prueba = {}
+         open ( "servicios.csv" ) in  archivo :
+         lector  =  csv . lector ( archivo )
+         print ( lector )
+         for Registro del cliente , Registro de Reservacion de sala , editar el nombre del evento , consultar las resarvaciones exiatentes , registra un nuevo cliente , salir  in  lector :
+              Registros [ int ( folio )] =  Registros ( Registro del cliente , Registro de Reservacion de sala , editar el nombre del evento , consultar las resarvaciones exiatentes , registra un nuevo cliente, salir )
+else :
+    archivo  =  abrir ( "servicios.csv" , "w" )
+    grabador  =  csv . escritor ( archivo )
+    grabador . writerow (( "Registro del cliente" , "Registro de Reservacion de sala" , "editar el nombre del evento" , 'consultar las resarvaciones exiatentes' , 'registra un nuevo cliente' , "salir" ))
+    archivo _ cerrar ()
+    
+
+def RegistrarUnServicio ():
+     
+    Registro del cliente  = []
+    Registro de reservación de sala  = []
+    editar el nombre del evento  = []
+    consultar las resarvaciones exiatentes = []
+    Registrar un nuevo cliente = []
+    Salir = []
+    
+    
+    
+        #El diccionario pasa a escibirse al CSV
+        archivo  =  abrir ( "servicios.csv" , "w" , nueva línea = "" )
+        grabador  =  csv . escritor ( archivo )
+        grabador . writerow (( "Registro del cliente" , "Registro de reservación de sala" , "editar el nombre del evento" , 'consultar las resarvaciones exiatentes' , 'Registrar un nuevo cliente' , "Salir" ))
+        grabador . writerows ([( folio , datos [ 0 ], datos [ 1 ], datos [ 2 ], datos [ 3 ], datos [ 4 ]) for  folio , datos  in  registros . items ()])
+        archivo _ cerrar ()
+
+
+def  DesplegarTodosLosDatos ():
+    print ( ' \n Registro del cliente \t Registro de reservación de sala \t editar el nombre del evento \t consultar las resarvaciones exiatentes \t Registrar un nuevo cliente \t  salir' )
+    print ( '-' * 50 )
+    for  elemento  in  registros . artículos ():
+        print ( f' { elemento [ 0 ] } \t { elemento [ 1 ][ 0 ] } \t { elemento [ 1 ][ 1 ] } \t { elemento [ 1 ][ 2 ] } \t { elemento [ 1 ] [ 3 ] } \t { elemento [ 1 ][ 4 ] } ' )
+        print ( '-' * 50 )
+        print ()
+
+
+
+# Funcion para crear un menu principal por cual se entrara a las demas funciones
+
+        print ( '**SERVICIO DE SOPORTE TECNICO***' )
+        print ( '[1] Registro del cliente ' )
+        print ( '[2]Registro de reservación de sala' )
+        print ( '[3] editar el nombre del evento' )
+        print ( '[4] consultar las resarvaciones exiatentes' )
+        print ( '[5]Registrar un nuevo cliente' )
+        print ( '[6]Salir
+        opcion = input ( 'Seleccione una opcion: ' )
